@@ -135,43 +135,114 @@ body {
   font-style: italic;
 }
 
-/* === FLOATING SEMI-CIRCLE PROJECT MENU === */
+/* Floating menu container fixed on left center */
 .floating-menu {
   position: fixed;
+  top: 50%;
   left: 0;
-  top: 40%;
-  width: 60px;
-  height: 120px;
-  background-color: var(--peach);
-  border-top-right-radius: 60px;
-  border-bottom-right-radius: 60px;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 200px;
+  background: #f08080;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 1000;
   transition: width 0.3s ease;
+  overflow: visible;
 }
 
-.floating-menu:hover {
-  width: 160px;
-}
-
-.floating-menu a {
-  margin: 0.5rem 0;
+/* Main toggle button style */
+#menu-toggle {
+  width: 80px;
+  height: 160px;
+  border-radius: 0 80px 80px 0;
+  background-color: #f08080;
   color: white;
-  text-align: left;
-  width: 100%;
-  padding-left: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  opacity: 0;
-  white-space: nowrap;
-  transition: opacity 0.3s ease;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  transition: background-color 0.3s ease;
 }
 
-.floating-menu:hover a {
+/* Scale up the main button on open */
+.floating-menu.open #menu-toggle {
+  transform: scale(1.2);
+}
+
+/* Container for the flying circles */
+.circle-menu {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* The small circle items initially hidden, stacked on main button */
+.circle-item {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f4978e;
+  color: white;
+  font-size: 26px;
+  line-height: 60px;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Reveal on hover */
+/* Fly out on hover — adjust arc by translating */
+.floating-menu:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.floating-menu:hover .circle-item:nth-child(1) {
+  transform: translate(70px, -70px) scale(1);
   opacity: 1;
+  pointer-events: auto;
+}
+.floating-menu:hover .circle-item:nth-child(2) {
+  transform: translate(90px, 0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.floating-menu:hover .circle-item:nth-child(3) {
+  transform: translate(70px, 70px) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Initially, small circles are stacked on the toggle button */
+.circle-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f4978e;
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Optional hover effect on small circles */
+.circle-item:hover {
+  background-color: #fbc4ab;
+  transform: scale(1.1);
 }
 
 /* === RESPONSIVE === */
