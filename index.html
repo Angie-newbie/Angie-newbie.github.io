@@ -4,99 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angie Yang | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Angie Yang</h1>
-    <p>Junior Software Developer | Digital Media Designer</p>
-  </header>
+  <!-- Decorative Coding Section -->
+  <section class="hero">
+    <div class="hero-bg-text">CODING</div>
+    <div class="hero-content">
+      <h1>Angie Yang</h1>
+      <p>Junior Software Developer | Digital Media Designer</p>
+      <p>Email: your.email@example.com</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+    </div>
+  </section>
 
-  <nav>
-    <ul class="nav-menu">
-      <li><a href="#travel">Travel Planner</a></li>
-      <li><a href="#budget">Budget Allocation</a></li>
-    </ul>
+  <!-- Intro Section -->
+  <section class="intro">
+    <h2>Hello, I’m Angie!</h2>
+    <p>I’m a creative developer with a background in Digital Media Design and a Diploma in Web Development. I build intuitive, full-stack apps with attention to user experience and clean code.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="skill-columns">
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>REST APIs</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Database</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>Mongoose</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div id="project1" class="project-content">
+        <h3>Travel Planner App</h3>
+        <p>Full-stack MERN app for managing travel expenses.</p>
+        <p>
+          <a href="https://travel-planner-latteb.onrender.com/" target="_blank">Live App</a> |
+          <a href="https://github.com/Angie-newbie/TravelPlanner_App_Backend" target="_blank">Backend</a> |
+          <a href="https://github.com/dajesso/TravelPlanner_App_Frontend" target="_blank">Frontend</a>
+        </p>
+      </div>
+      <div id="project2" class="project-content">
+        <h3>Budget Allocation CLI</h3>
+        <p>Python app to calculate and visualize monthly budgets.</p>
+        <p>
+          <a href="https://github.com/Angie-newbie/Budget_allocation_app" target="_blank">View on GitHub</a>
+        </p>
+      </div>
+      <div id="project3" class="project-content">
+        <h3>EggHunt (Upcoming)</h3>
+        <p>A new fun web game built with React. Coming soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Project Menu -->
+  <nav class="floating-menu">
+    <button id="menu-toggle">≡</button>
+    <div class="circle-menu">
+      <a href="#project1" class="circle-item">1</a>
+      <a href="#project2" class="circle-item">2</a>
+      <a href="#project3" class="circle-item">3</a>
+    </div>
   </nav>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a developer with a Diploma of Web Development and a Bachelor’s in Digital Media Design. I combine creative design with backend development to build intuitive and functional web applications. I’m passionate about clean code, learning new technologies, and creating great user experiences.</p>
-  </section>
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.circle-menu');
 
-  <section class="project" >
-    <section class="project" id="travel">
-
-        <h2> Travel Planner App</h2>
-        <p class="project-subtitle">Full-Stack MERN Project | Team of 3 | 2024</p>
-        <p class="project-links">
-        <a href="https://travel-planner-latteb.onrender.com/" target="_blank">Live App</a> |
-        <a href="https://github.com/Angie-newbie/TravelPlanner_App_Backend" target="_blank">Backend Repo</a> |
-        <a href="https://github.com/dajesso/TravelPlanner_App_Frontend" target="_blank">Frontend Repo</a>
-        </p>
-
-        <ul class="project-features">
-            <li> Authentication with JWT (handled by teammate)</li>
-            <li> Trip, Category, and Expense CRUD operations with input validation</li>
-            <li> Real-time expense tracking and category summaries</li>
-            <li> User-focused backend logic and API design</li>
-            <li> Protected routes with error handling and feedback</li>
-            <li> Responsive frontend built with React and custom modals</li>
-        </ul>
-        <div class="project-contribution">
-            <h3>My Contribution</h3>
-            <ul>
-            <li>Built backend logic for expense and category management</li>
-            <li>Designed RESTful APIs with validation and clear structure</li>
-            <li>Created responsive and accessible frontend components</li>
-            <li>Planned wireframes and user flow for smooth UX</li>
-            <li>Collaborated using GitHub and Agile-style task division</li>
-            </ul>
-        </div>
-    </section>
-    
-    <!-- Budget app -->
-    <section class="project" id="budget">
-        
-        <h2> Budget Allocation App</h2>
-        <p class="project-subtitle">Python CLI Project | Solo | 2024</p>
-        <p class="project-links">
-            <a href="https://github.com/Angie-newbie/Budget_allocation_app" target="_blank">View on GitHub</a>
-        </p>
-        
-        <ul class="project-features">
-            <li> Calculates budget allocations based on monthly income & fixed expenses</li>
-            <li> CLI-based app with formatted output tables and pie chart visuals</li>
-            <li> Categories include Savings, Investments, Emergency Fund, Guilt-Free Spending</li>
-            <li> Pie chart saved as PNG and ASCII-styled terminal header</li>
-            <li> Input validation, error handling, and support for multiple sessions</li>
-        </ul>
-        
-        <div class="project-contribution">
-            <h3>My Contribution</h3>
-            <ul>
-            <li>Designed and developed the entire application independently</li>
-            <li>Used Python with libraries: matplotlib, tabulate, colorama, pyfiglet</li>
-            <li>Focused on clarity, usability, and clean output formatting</li>
-            <li>Documented setup instructions, dependencies, and licensing in README</li>
-            </ul>
-        </div>
-    </section>
-</section>
-
-  <section>
-    <h2>Skills</h2>
-    <p>JavaScript, Node.js, React, MongoDB, Express, Git, HTML, CSS, Agile, REST APIs</p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
-  </section>
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
 
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>© 2025 Angie Yang</p>
   </footer>
 </body>
 </html>
