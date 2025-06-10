@@ -7,22 +7,6 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<!-- for floating menu -->
-<script>
-  const menu = document.getElementById("floatingMenu");
-  let hoverTimeout;
-
-  menu.addEventListener("mouseenter", () => {
-    clearTimeout(hoverTimeout);
-    menu.classList.add("hover-active");
-  });
-
-  menu.addEventListener("mouseleave", () => {
-    hoverTimeout = setTimeout(() => {
-      menu.classList.remove("hover-active");
-    }, 2500); // 2.5 seconds delay
-  });
-</script>
 
 <body>
   <!-- Decorative Coding Section -->
@@ -109,6 +93,23 @@
       <a href="#project3" class="circle-item">🥚</a>
     </div>
   </nav>
+
+  <!-- for floating menu -->
+  <script>
+    const menu = document.getElementById("floatingMenu");
+    let hoverTimeout;
+
+    menu.addEventListener("mouseenter", () => {
+      clearTimeout(hoverTimeout);
+      menu.classList.add("hover-active");
+    });
+
+    menu.addEventListener("mouseleave", () => {
+      hoverTimeout = setTimeout(() => {
+        menu.classList.remove("hover-active");
+      }, 2500); // 2.5 seconds delay
+    });
+  </script>
 
 </body>
 
