@@ -208,17 +208,17 @@ body {
   transform: translateY(-50%) scale(1.1);
 }
 
-.floating-menu:hover .circle-item:nth-child(1) {
+.floating-menu:hover-active .circle-item:nth-child(1) {
   transform: translate(70px, -70px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
-.floating-menu:hover .circle-item:nth-child(2) {
+.floating-menu:hover-active .circle-item:nth-child(2) {
   transform: translate(90px, 0) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
-.floating-menu:hover .circle-item:nth-child(3) {
+.floating-menu:hover-active .circle-item:nth-child(3) {
   transform: translate(70px, 70px) scale(1);
   opacity: 1;
   pointer-events: auto;

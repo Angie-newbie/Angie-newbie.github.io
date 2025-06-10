@@ -6,6 +6,24 @@
   <title>Angie Yang | Portfolio</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
+<!-- for floating menu -->
+<script>
+  const menu = document.getElementById("floatingMenu");
+  let hoverTimeout;
+
+  menu.addEventListener("mouseenter", () => {
+    clearTimeout(hoverTimeout);
+    menu.classList.add("hover-active");
+  });
+
+  menu.addEventListener("mouseleave", () => {
+    hoverTimeout = setTimeout(() => {
+      menu.classList.remove("hover-active");
+    }, 2500); // 2.5 seconds delay
+  });
+</script>
+
 <body>
   <!-- Decorative Coding Section -->
   <section class="hero">
@@ -83,7 +101,7 @@
   </section>
 
   <!-- Floating Project Menu -->
-  <nav class="floating-menu">
+  <nav id="floatingMenu" class="floating-menu">
     <div class="menu-toggle">🚀</div>
     <div class="circle-menu">
       <a href="#project1" class="circle-item">✈️</a>
