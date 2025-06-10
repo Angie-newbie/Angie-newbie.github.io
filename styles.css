@@ -16,9 +16,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  background-color: var(--bg-light);
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
   padding-left: 80px; /* room for floating nav */
@@ -84,7 +87,7 @@ body {
 }
 
 .skill-card {
-  background-color: white;
+  background-color: #fbc4ab;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
