@@ -75,38 +75,40 @@ body {
   text-align: center;
 }
 
-.skills h2 {
-  font-size: 2.5rem;
-  color: var(--peach);
-  margin-bottom: 2rem;
+.skill-columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-.skill-group {
-  background-color: var(--light-peach);
-  padding: 1.5rem;
+.skill-card {
+  background-color: white;
   border-radius: 12px;
+  padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  flex: 0 1 250px;
-  min-width: 200px;
-  max-width: 300px;
-  margin: 1rem 0;
+  width: 250px;
 }
 
-.skill-group h3 {
-  color: white;
+.skill-title {
+  color: var(--dark-peach); /* or any strong peach tone */
   margin-bottom: 1rem;
   font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.skill-group ul li {
-  background-color: white;
-  color: var(--text-dark);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  margin: 0.3rem;
-  display: inline-block;
+.skill-card ul {
+  list-style: none;
+  padding: 0;
 }
 
+.skill-card li {
+  background-color: var(--light-peach);
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
 
 /* === PROJECT SECTIONS === */
 .project-section {
