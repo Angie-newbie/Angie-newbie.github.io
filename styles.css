@@ -24,7 +24,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
-  padding-left: 80px; /* room for floating nav */
+  /* padding-left: 80px; room for floating nav */
 }
 
 /* === HERO CODING DECORATION === */
