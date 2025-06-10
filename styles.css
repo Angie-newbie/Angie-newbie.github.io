@@ -75,9 +75,10 @@ body {
   text-align: center;
 }
 
-.skills h3 {
+.skills h2 {
+  font-size: 2.5rem;
   color: var(--peach);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .skill-category {
@@ -98,6 +99,45 @@ body {
   margin: 0.5rem;
   font-size: 0.95rem;
 }
+
+.skill-columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skill-group {
+  background-color: var(--light-peach);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 0 1 250px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.skill-group h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-group li {
+  background-color: white;
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.3rem;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
 
 /* === PROJECT SECTIONS === */
 .project-section {
