@@ -135,7 +135,7 @@ body {
 /* === PROJECT SECTIONS === */
 .projects-section {
   padding: 4rem 2rem;
-  background-color: var(--bg-light);
+  background-color: var(--peach);
   color: var(--text-dark);
 }
 
