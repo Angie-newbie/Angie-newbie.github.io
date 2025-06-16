@@ -181,6 +181,20 @@ body {
   color: #888;
 }
 
+.project-images {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Floating menu container fixed on left center */
 .floating-menu {
   position: fixed;
