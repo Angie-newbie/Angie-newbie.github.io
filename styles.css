@@ -190,7 +190,7 @@ body {
 
 .project-images {
   flex: 1 1 300px;
-  min-width: 280px;
+  max-width: 400px;
 }
 
 .project-images figure {
@@ -201,6 +201,7 @@ body {
 
 .project-images img {
   width: 100%;
+  max-width: 350px
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
