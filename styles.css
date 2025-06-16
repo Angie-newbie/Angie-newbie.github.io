@@ -175,37 +175,48 @@ body {
   text-decoration: underline;
 }
 
+.project-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.project-text {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.project-images {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.project-images figure {
+  margin: 0 0 1rem 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.project-images img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-images figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
 .status.upcoming {
   font-size: 1rem;
   font-weight: normal;
   color: #888;
 }
 
-.project-images {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.project-images figure {
-  margin: 0;
-  max-width: 300px;
-  text-align: center;
-}
-
-.project-images img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-images figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #555;
-}
 
 /* Floating menu container fixed on left center */
 .floating-menu {
