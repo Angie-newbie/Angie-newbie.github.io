@@ -180,30 +180,32 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 1rem;
-  align-items: flex-start;
 }
 
 .project-text {
-  flex: 1 1 300px;
+  flex: 2;
   min-width: 280px;
 }
 
 .project-images {
-  flex: 1 1 300px;
-  max-width: 400px;
+  flex: 1;
+  max-width: 320px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding-right: 0.5rem;
+  scrollbar-width:thin;
 }
 
 .project-images figure {
   margin: 0 0 1rem 0;
-  max-width: 100%;
   text-align: center;
 }
 
 .project-images img {
   width: 100%;
-  max-width: 350px
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  height:auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .project-images figcaption {
