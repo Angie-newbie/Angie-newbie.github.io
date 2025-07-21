@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Symptom Pre-Fill API | Blog - Angie Yang</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: var(--peach);
+      margin-top: 1.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: var(--peach);
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bridging the Communication Gap in Healthcare: A Symptom Pre-Fill API for Better Consultations</h1>
+    <p><em>By Angie Yang, 2025</em></p>
+  </header>
+
+  <article>
+    <section>
+      <h2>Introduction: The Healthcare Challenge</h2>
+      <p>Miscommunication is a common issue in everyday life, in the case of healthcare, it can have serious consequences. In clinical settings such as general practice, telehealth, and urgent care, accurate communication between patients and healthcare professionals is critical for safe and effective diagnosis and treatment.</p>
+
+      <p>One of the most important steps in any consultation is collecting information about a patient’s symptoms. However, this process can be disrupted when patients struggle to describe their symptoms clearly, or when time constraints prevent doctors from asking detailed follow-up questions.</p>
+
+      <p>This can result in:</p>
+      <ul>
+        <li>Incomplete clinical records</li>
+        <li>Misdiagnosis or delayed diagnosis</li>
+        <li>Longer consultation times</li>
+        <li>Increased risk to patient safety</li>
+      </ul>
+
+      <section>
+        <h3>Example of Doctor and Patient Miscommunication:</h3>
+        <figure>
+            <img src="../assets/blogs/Conversation-doctor-and patients.png" alt="Example of miscommunication between doctor and patient" style="max-width:100%; height:auto;" />
+            <figcaption>Figure 1. Example of miscommunication between doctor and patient. Adapted from OUP Accepted Manuscript (2021)</figcaption>
+        </figure>
+        </section>
+      
+
+      <p>The challenge lies in patients’ understanding of how to describe and measure their symptoms. Often, they spend extra time trying to answer general medical questions, which can lead to delays and reduce the time healthcare professionals have to focus on more critical aspects of patient care.</p>
+
+      <p>To help address these issues, I propose building a Symptom Pre-Fill API, a backend tool that allows patients to enter key health information before their consultation. This system would support clinicians (including GPs, nurses, and specialists) by providing structured, relevant symptom data ahead of time. The goal is not to replace human interaction, but to enhance it by giving doctors a clearer starting point and reducing repetitive questioning.</p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>In one study, researchers compared the symptoms patients wrote on intake forms with those doctors recorded during the consultation. Alarmingly, in one out of every three cases, at least one patient-reported symptom was not documented by the physician (Pakhomov et al., 2008). This kind of information loss is surprisingly common and can occur due to time pressure, unclear descriptions, or differences in how symptoms are expressed and interpreted.</p>
+
+      <p>While personal health tracking tools are becoming more popular, they are bringing their challenges. A 2014 study found that not all self-reported data is clinically useful, and physicians often need to filter through irrelevant information to find what truly matters (West et al., 2014).</p>
+
+      <p>When general practitioners (GPs) are rushed or must rely on incomplete or misunderstood patient input, it can lead to:</p>
+      <ul>
+        <li>Missed or overlooked symptoms</li>
+        <li>Rushed or superficial interviews</li>
+        <li>Inaccurate or unstructured medical notes</li>
+      </ul>
+
+      <p>As noted in the RACGP’s Clinical Information System guide:</p>
+      <blockquote>
+        “High-quality health records support good patient care and facilitate:<br />
+        • safe clinical decision making<br />
+        • effective communication between health professionals<br />
+        • trusting partnerships with patients<br />
+        • coordination and continuity of care.”<br />
+        — The Royal Australian College of General Practitioners (RACGP)
+      </blockquote>
+
+      <p>These issues highlight a clear need for better tools that are able to support accurate, structured symptom reporting to improve communication, reduce the cognitive load on both patients and doctors, and ultimately lead to better outcomes.</p>
+    </section>
+
+    <section>
+      <h2>Attempted Resolution: The Symptom Pre-Fill API</h2>
+      <p>To address the communication gap between patients and healthcare providers, I developed a backend Symptom Pre-Fill API. This tool helps the patients to enter structured symptom data (e.g. pain severity, duration, affected areas) before their consultation. The goal is to provide doctors with concise, relevant health information in advance, helping them better prepare for and focus on the in-person discussion.</p>
+
+      <p>This approach offers a balance between efficiency and clinical accuracy, without replacing the human interaction that is central to medical care.</p>
+
+      <h3>Key Features</h3>
+      <ul>
+        <li>Customizable Forms: Healthcare providers can tailor symptom questions based on condition types or clinical focus (e.g., flu-like symptoms, chronic pain, mental health). This flexibility improves data relevancy and patient engagement.</li>
+        <li>Multiple Choice & Input Validation: The system offers structured input options (e.g., yes/no, severity scales, duration pickers) and validates user entries. This minimises ambiguity and ensures the completeness and consistency of patient-provided data.</li>
+        <li>Secure Data Storage: Patient submissions are stored in a MongoDB database using data sanitisation and access control. Sensitive health data is encrypted in transit, and authentication is implemented to restrict access to authorised healthcare staff only.</li>
+        <li>Summary Generation: Upon form submission, the system compiles responses into a short, structured summary. This is made available to the healthcare provider before the appointment, enabling quicker and more informed consultations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Implementation</h2>
+      <p>The project was built using the following stack:</p>
+      <ul>
+        <li><strong>Node.js:</strong> A fast and scalable JavaScript runtime, ideal for building lightweight APIs.</li>
+        <li><strong>Express.js:</strong> A minimalist web framework for Node.js that simplifies routing, middleware, and request handling.</li>
+        <li><strong>TypeScript:</strong> A typed superset of JavaScript that adds static type checking, making the codebase more reliable, maintainable, and less prone to runtime errors.</li>
+        <li><strong>MongoDB:</strong> A NoSQL database that supports flexible, schema-less data storage. This makes it suitable for storing diverse patient inputs, where fields may vary depending on the symptom type.</li>
+        <li><strong>Mongoose:</strong> An ODM (Object Document Mapper) used for validating data, defining symptom schemas, and maintaining consistency.</li>
+      </ul>
+
+      <p>The API design follows RESTful principles, to integrate easily into future front-end interfaces or existing clinical information systems (CIS). It includes endpoints for creating, updating, and retrieving symptom data, all with secure request handling and validation.</p>
+    </section>
+
+    <section>
+        <h2>API Example Diagram</h2>
+        <p>
+            The following flowchart illustrates how the Symptom Pre-Fill API serves both the patient and healthcare provider sides of the consultation process. Patients begin by submitting structured symptom data through a secure endpoint. This data is then stored in the backend database. Later, authorised medical staff can access this information using a secure, authenticated dashboard to review and prepare for the consultation.
+        </p>
+        <figure>
+            <img src="../assets/blogs/API flowchart.png" alt="API flowchart showing patient submission and provider review process" style="max-width: 100%; height: auto;" />
+            <figcaption>Figure 2: API flowchart showing how patients submit symptoms and providers retrieve them securely.</figcaption>
+        </figure>
+        </section>
+
+    <section>
+      <h2>Ethical and Privacy Considerations</h2>
+      <p>Handling sensitive patient data demands strict adherence to ethical standards and privacy regulations. The Symptom Pre-Fill API prioritises patient safety, data confidentiality, and compliance with healthcare laws with the following:</p>
+      <ul>
+        <li>Data Minimisation: Only essential symptom data is collected to avoid unnecessary exposure of personal health information.</li>
+        <li>Informed Consent: Patients must be informed about how their data will be used, stored, and shared with healthcare providers.</li>
+        <li>Access Control: The system implements JWT-based authentication ensuring only authorised healthcare professionals can access patient records.</li>
+        <li>Data Security: All data is transmitted over encrypted HTTPS connections. Sensitive fields are sanitised and stored securely in MongoDB with appropriate user-level access restrictions.</li>
+        <li>Auditability: Changes and submissions are logged to maintain an audit trail with accountability and error tracking.</li>
+        <li>Patient Safety: The API serves as a clinical support tool, not a diagnostic replacement. Clear disclaimers inform users and providers that clinical judgment remains paramount.</li>
+      </ul>
+
+      <p>By integrating these principles, the API respects patient autonomy and privacy while fostering trust between patients and healthcare providers.</p>
+    </section>
+
+    <section>
+      <h2>Skills Gained</h2>
+      <p>This project helped me develop self-learning skills by completing an end-to-end coding solution using a programming language I had not used before. It was my first time working with TypeScript. While I initially struggled with type declarations and route handler syntax (e.g., needing to specify Promise&lt;any&gt;), I was able to debug and resolve these issues independently.</p>
+
+      <p>More importantly, I learned that real-world development requires collaboration, especially when designing tools for broad use in sectors like public health. I also became more confident using REST APIs, TypeScript typing, and Mongoose schemas.</p>
+    </section>
+
+    <section>
+      <h2>Challenges and Future Work</h2>
+      <p>There were several challenges I faced during this project:</p>
+      <ul>
+        <li>Learning TypeScript: I was unfamiliar with TypeScript initially and had to spend time understanding type declarations and resolving errors.</li>
+        <li>Design Complexity: This project covers both patient-facing and doctor-facing workflows. It was confusing sometimes to separate logic for different user types (e.g., who submits data and who reviews it).</li>
+      </ul>
+
+      <p>In the future, I plan to:</p>
+      <ul>
+        <li>Build a frontend for patients to prefill symptoms using this API</li>
+        <li>Allow hospitals to customise the form by department (e.g., cardiology vs dermatology)</li>
+        <li>Support multi-language forms</li>
+        <li>Create an admin dashboard for doctors to review submissions</li>
+        <li>Integrate with Electronic Health Records (EHR) systems</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <ul>
+        <li>McCabe, R. and Healey, P.G., 2018. Miscommunication in doctor–patient communication. Topics in cognitive science, 10(2), pp.409-424.</li>
+        <li>Hayes, A.J., Pool, R., Roughley, C., Scholes, S., Sharifi, L., Woodside, R., Reilly, S., Roberts, P., Salter, T. and Singleton, L., 2018. Communication and Miscommunication: Handover between Junior Doctors. Reinvention: An International Journal of Undergraduate Research, 11(1).</li>
+        <li>Morgan, S., 2013. Miscommunication between patients and general practitioners: implications for clinical practice. Journal of Primary Health Care, 5(2), pp.123-128.</li>
+        <li>Beckingsale, T. B., & Greiss, M. E. (2011). Getting off on the wrong foot: Doctor–patient miscommunication: A risk for wrong site surgery. Foot and ankle surgery, 17(3), 201-202.</li>
+        <li>Serguei Pakhomov, Jacobsen, S.J., Chute, C.G. and Roger, V.L. (2008). Agreement between Patient-reported Symptoms and their Documentation in the Medical Record. The American journal of managed care, [online] 14(8), p.530. Available at: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2581509/" target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC2581509
