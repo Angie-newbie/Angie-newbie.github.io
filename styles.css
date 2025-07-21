@@ -295,17 +295,22 @@ body {
 }
 
 .floating-menu.hover-active .circle-menu a:nth-child(1) {
-  transform: translate(70px, -70px) scale(1);
+  transform: translate(60px, -90px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 .floating-menu.hover-active .circle-menu a:nth-child(2) {
-  transform: translate(90px, 0) scale(1);
+  transform: translate(95px, -30px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 .floating-menu.hover-active .circle-menu a:nth-child(3) {
-  transform: translate(70px, 70px) scale(1);
+  transform: translate(95px, 30px) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.floating-menu.hover-active .circle-menu a:nth-child(4) {
+  transform: translate(60px, 90px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
