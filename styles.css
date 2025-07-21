@@ -417,3 +417,18 @@ footer a p {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* blog page */
+.blog-page {
+  background-color: var(--peach);
+  color: white;
+}
+
+.blog-page .projects-section {
+  background-color: transparent;
+}
+
+.blog-page .project-card {
+  background-color: var(--cream);
+  color: var(--text-dark);
+}
