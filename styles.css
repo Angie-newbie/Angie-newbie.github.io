@@ -325,22 +325,22 @@ body {
 }
 
 .floating-menu.hover-active .circle-menu a:nth-child(1) {
-  transform: translate(70px, -70px) scale(1);
+  transform: translate(30px, -160px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 .floating-menu.hover-active .circle-menu a:nth-child(2) {
-  transform: translate(100px, -20px) scale(1);
+  transform: translate(100px, -90px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 .floating-menu.hover-active .circle-menu a:nth-child(3) {
-  transform: translate(100px, 20px) scale(1);
+  transform: translate(100px, 0px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 .floating-menu.hover-active .circle-menu a:nth-child(4) {
-  transform: translate(70px, 70px) scale(1);
+  transform: translate(30px, 85px) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
