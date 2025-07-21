@@ -74,13 +74,15 @@ body {
 }
 
 /* menu */
-.main-nav {
-  background: transparent;
-  padding: 2rem 0;
-  text-align: center;
+.button-nav-wrapper {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
 }
 
 .main-nav a {
